@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import fmt from 'ember-string-fmt';
 import { test, module } from 'qunit';
 import startApp from '../helpers/start-app';
 
@@ -8,7 +9,7 @@ function checkMarkVisibilityTest(selectPickerID) {
   var selector =
     `#${selectPickerID} .dropdown-menu li>a:eq(%@) span.check-mark`;
   return function(itemIndex) {
-    return !find(Ember.String.fmt(selector, itemIndex)).hasClass('hidden');
+    return !find(fmt(selector, itemIndex)).hasClass('hidden');
   };
 }
 

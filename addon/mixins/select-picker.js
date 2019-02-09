@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import fmt from 'ember-string-fmt';
 
 // Ember Addons need to be coded as if Ember.EXTEND_PROTOTYPES = false
 // Because of this we need to make our own proxy functions to apply as one offs
@@ -243,7 +244,7 @@ export default Ember.Mixin.create({
           case 1:
             return selection.get('firstObject');
           default:
-            return Ember.String.fmt(
+            return fmt(
               this.get('multipleSelectedMessage'),
               count,
               selection.get('firstObject'),
