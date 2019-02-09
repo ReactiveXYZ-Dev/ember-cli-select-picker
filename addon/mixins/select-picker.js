@@ -21,7 +21,7 @@ const emberArrayFunc = function(method) {
 };
 const _contains = emberArrayFunc(
   // Backwards compatability for Ember < 2.x
-  Ember.Enumerable.keys() ? (
+  Ember.Enumerable.keys().indexOf ? (
     Ember.Enumerable.keys().indexOf('includes') !== -1 ?
       'includes' :
       'contains'
